@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        /* Style for body and html to ensure full height and no overflow */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: georgia, sans-serif; /* Optional: Sets the font for the page */
+        }
+
+        /* Style for background image */
+        body {
+            background-image: url('pexels-eberhardgross-2098427.jpg'); /* Replace with your image path */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents image from repeating */
+            background-attachment: fixed; /* Keeps background fixed when scrolling */
+            display: flex; /* Centers content horizontally and vertically */
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* Centers text horizontally */
+        }
+
+        /* Container for the cake GIF and overlay text */
+        #content {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block; /* Allows content to fit around the GIF and text */
+        }
+
+        /* Style for the cake GIF */
+        #cake-gif {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
+        }
+
+        /* Style for overlay text */
+        #overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the text */
+            color: white; /* Text color */
+            font-size: 18px; /* Font size */
+            font-weight: bold; /* Bold text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow to improve readability */
+        }
+
+        /* Style for the button */
+        #next-button {
+            display: block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #000000; /* Black background for the button */
+            color: white; /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none; /* Remove underline from the link */
+        }
+
+        /* Hover effect for the button */
+        #next-button:hover {
+            background-color: #333333; /* Darker black for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <!-- Main GIF of Cake -->
+        <img id="cake-gif" src="C:\Users\Snehal\Desktop\Birthday 26aug\CAKE.gif" alt="Birthday Cake">
+
+        <!-- Overlay Text -->
+        <div id="overlay-text">Blow candles!</div>
+
+        <!-- Button to navigate to the next page -->
+        <a id="next-button" href="Surprise_page.html">click on me to see next surprise!!</a>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" src="C:\Users\Snehal\Desktop\Birthday 26aug\happy-birthday-music-box-version-117317.mp3"></audio>
+
+    <script>
+        // Get references to the GIF and audio elements
+        const cakeGif = document.getElementById('cake-gif');
+        const backgroundMusic = document.getElementById('background-music');
+
+        // Add click event listener to the GIF
+        cakeGif.addEventListener('click', () => {
+            // Check if the audio is already playing
+            if (backgroundMusic.paused) {
+                backgroundMusic.play(); // Play the music
+            } else {
+                backgroundMusic.pause(); // Pause the music if already playing
+            }
+        });
+    </script>
+</body>
+</html>

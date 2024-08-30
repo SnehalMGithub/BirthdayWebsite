@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose and Music Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('pexels-eberhardgross-2098427.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center; /* Center text horizontally */
+            cursor: pointer; /* Change cursor to indicate the background is clickable */
+        }
+
+        .rose-gif {
+            text-align: center;
+            opacity: 0; /* Start as invisible */
+            animation: fadeIn 3s ease-in-out forwards; /* Animation to fade in */
+        }
+
+        .rose-gif img {
+            width: 200px; /* Adjust the size of the GIF as needed */
+            height: auto;
+        }
+
+        /* Ensure audio is hidden from view */
+        audio {
+            display: none;
+        }
+
+        /* Style for paragraph */
+        .message {
+            color: white;
+            font-family: georgia, sans-serif;
+            margin: 20px; /* Adjust margin as needed */
+            font-size: 1.2em; /* Adjust font size as needed */
+        }
+
+        /* Keyframes for fading in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="message">Wish you a great year ahead!<br>
+    <br>Wishing you a day filled with
+    joy, laughter, and all your favorite things.<br>
+    <br>Cheers to another great year ahead!</p>
+
+    <!-- Background Music -->
+    <audio id="background-music" src="Aise_Kyun_song.mp3" loop></audio>
+
+    <!-- Rose GIF -->
+    <div class="rose-gif">
+        <img id="rose-gif" src="rose.gif" alt="Rose">
+    </div>
+
+    <script>
+        // Get references to the body and audio elements
+        const body = document.querySelector('body');
+        const backgroundMusic = document.getElementById('background-music');
+
+        // Function to play or pause the music
+        function toggleMusic() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play(); // Play the music if it is paused
+            } else {
+                backgroundMusic.pause(); // Pause the music if it is playing
+            }
+        }
+
+        // Add click event listener to the body
+        body.addEventListener('click', toggleMusic);
+    </script>
+</body>
+</html>

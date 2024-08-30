@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: georgia, sans-serif;
+            background: url('pexels-eberhardgross-2098427.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #container {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            bottom: 40px;
+        }
+
+        #button {
+            display: none;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            position: absolute;
+            bottom: 2px;
+        }
+
+        #button:hover {
+            background-color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" src="C:\Users\Snehal\Desktop\Birthday 26aug\Aise_Kyun_song.mp3" autoplay loop></audio>
+
+    <div id="container">
+        <!-- Image -->
+        <img id="image" src="C:\Users\Snehal\Desktop\Birthday 26aug\photo-collage.jpg" alt="Surprise Image">
+
+        <!-- Button -->
+        <button id="button" onclick="nextSurprise()" style="font-family: georgia, sans-serif;">Click on me to see the next surprise</button>
+
+    </div>
+
+    <script>
+        // Function to handle the animation
+        function animateImage() {
+            const image = document.getElementById('image');
+            const button = document.getElementById('button');
+
+            // Add class to start animation
+            image.style.opacity = '1';
+
+            // Show button after animation
+            setTimeout(() => {
+                button.style.display = 'block';
+            }, 3000); // Adjust this time to match the animation duration
+
+        }
+
+         // Function to handle the next surprise
+        function nextSurprise() {
+            window.location.href = 'Surprise_Page2.html'; // Replace with the URL of your surprise page
+        }
+
+
+        // Start the image animation on page load
+        window.onload = animateImage;
+    </script>
+</body>
+</html>

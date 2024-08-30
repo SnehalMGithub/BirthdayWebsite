@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Greeting</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: georgia, sans-serif;
+
+        }
+
+        #background {
+            background-image: url('pexels-eberhardgross-2098427.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #overlay {
+            position: relative;
+            width: 350px; /* Size of the small image */
+            height: 400px; /* Size of the small image */
+            background-image: url('Diy-greeting-cards.jpg');
+            background-size: 50*50;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        #surprise-message {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #surprise-message:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div id="overlay">
+            <h1>Happy Birthday Rishi !!</h1>
+            <div id="surprise-message">Click on me to see surprise</div>
+        </div>
+    </div>
+
+     <!-- Background Music -->
+    <audio id="background-music" src="C:\Users\Snehal\Desktop\Birthday 26aug\happy-birthday-music-box-version-117317.mp3" preload="auto"></audio>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('surprise-message').style.display = 'block';
+            }, 3000); // 3 seconds delay
+
+
+             // Handle surprise message click
+             document.getElementById('surprise-message').onclick = function() {
+                // Play the background music when the surprise button is clicked
+                const audio = document.getElementById('background-music');
+                audio.play().catch(error => {
+                    console.log('Playback error: ', error);
+                });
+
+            // Redirect to the surprise page
+                window.location.href = 'Cake cutting.html'; // Replace with the URL of your surprise page
+            };
+        };
+    </script>
+</body>
+</html>
