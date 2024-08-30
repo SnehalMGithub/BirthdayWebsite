@@ -31,11 +31,6 @@
             height: auto;
         }
 
-        /* Ensure audio is hidden from view */
-        audio {
-            display: none;
-        }
-
         /* Style for paragraph */
         .message {
             color: white;
@@ -62,7 +57,7 @@
     <br>Cheers to another great year ahead!</p>
 
     <!-- Background Music -->
-    <audio id="background-music" src="Aise_Kyun_song.mp3" loop></audio>
+    <audio id="background-music" src="Aise_Kyun_song.mp3" auto loop></audio>
 
     <!-- Rose GIF -->
     <div class="rose-gif">
@@ -72,19 +67,7 @@
     <script>
         // Get references to the body and audio elements
         const body = document.querySelector('body');
-        const backgroundMusic = document.getElementById('background-music');
-
-        // Function to play or pause the music
-        function toggleMusic() {
-            if (backgroundMusic.paused) {
-                backgroundMusic.play(); // Play the music if it is paused
-            } else {
-                backgroundMusic.pause(); // Pause the music if it is playing
-            }
-        }
-
-        // Add click event listener to the body
-        body.addEventListener('click', toggleMusic);
+        
     </script>
 </body>
 </html>
