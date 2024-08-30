@@ -67,9 +67,19 @@
     <script>
         // Get references to the body and audio elements
         const body = document.querySelector('body');
+        const backgroundMusic = document.getElementById('background-music');
 
-        // Start the image animation on page load
-        window.onload = animateImage;
+        // Function to play or pause the music
+        function toggleMusic() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play(); // Play the music if it is paused
+            } else {
+                backgroundMusic.pause(); // Pause the music if it is playing
+            }
+        }
+
+        // Add click event listener to the body
+        body.addEventListener('click', toggleMusic);
         
     </script>
 </body>
